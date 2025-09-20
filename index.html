@@ -1,11 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITGuyN9 - IT Support & Digital Marketing for Jempol & Bahau</title>
+    <meta name="description" content="ITGuyN9 - Pakar Sokongan IT & Pemasaran Digital untuk Jempol, Bahau & seluruh Negeri Sembilan. Perkhidmatan IT, pembangunan laman web, SEO & penyelesaian AI.">
+    <meta name="keywords" content="IT support Jempol, digital marketing Bahau, pembaikan komputer Negeri Sembilan, servis IT Kuala Pilah, website development, SEO services, AI solutions, cloud services, sokongan teknikal">
+    <meta name="author" content="ITGuyN9">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="MY-NSN">
+    <meta name="geo.placename" content="Jempol, Negeri Sembilan">
+    <meta name="geo.position" content="2.902392;102.407218">
+    <meta name="ICBM" content="2.902392, 102.407218">
+    <link rel="canonical" href="https://www.itguyn9.com">
+    
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ITGuyN9",
+      "image": "https://itguyn9.com/images/logo.jpg",
+      "@id": "https://www.itguyn9.com",
+      "url": "https://www.itguyn9.com",
+      "telephone": "+60123456789",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jalan Bahau",
+        "addressLocality": "Jempol",
+        "addressRegion": "Negeri Sembilan",
+        "postalCode": "72120",
+        "addressCountry": "MY"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "2.902392",
+        "longitude": "102.407218"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/itguyn9",
+        "https://www.instagram.com/itguyn9",
+        "https://www.linkedin.com/company/itguyn9"
+      ],
+      "priceRange": "$$"
+    }
+    </script>
+    
+    <title>ITGuyN9 - Pakar Sokongan IT & Pemasaran Digital untuk Jempol, Bahau & Negeri Sembilan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #2563eb;
@@ -35,12 +93,43 @@
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+        
+        /* Language Toggle */
+        .language-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 999;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 8px;
+            display: flex;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        
+        .lang-btn {
+            padding: 8px 15px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
         }
         
         /* Header & Navigation */
@@ -52,6 +141,11 @@
             z-index: 1000;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
+        }
+        
+        .scrolled {
+            padding: 10px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
         
         .navbar {
@@ -483,6 +577,105 @@
             color: var(--text-secondary);
         }
         
+        /* Testimonials Section */
+        .testimonials {
+            padding: 100px 0;
+            background-color: var(--section-bg);
+        }
+        
+        .testimonial-container {
+            display: flex;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            gap: 30px;
+            padding: 20px 0;
+        }
+        
+        .testimonial-card {
+            flex: 0 0 350px;
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-role {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-content {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-style: italic;
+        }
+        
+        .testimonial-rating {
+            color: #fbbf24;
+            margin-top: 15px;
+        }
+        
+        /* Local Business Section */
+        .local-business {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .local-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .local-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 16px;
+            background: var(--card-bg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+        }
+        
+        .local-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .local-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .local-card h3 {
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+        
+        .local-card p {
+            color: var(--text-secondary);
+        }
+        
         /* Contact Section */
         .contact {
             padding: 100px 0;
@@ -704,6 +897,66 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(37, 99, 235, 0.4);
+        }
+        
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+        
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -714,6 +967,16 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Malay Font Support */
+        .malay-font {
+            font-family: 'Noto Sans Malayalam', 'Poppins', sans-serif;
         }
         
         /* Responsive Design */
@@ -727,11 +990,37 @@
                 grid-template-columns: 1fr;
                 gap: 50px;
             }
+            
+            .testimonial-container {
+                flex-direction: column;
+            }
+            
+            .testimonial-card {
+                flex: 0 0 auto;
+            }
         }
         
         @media (max-width: 768px) {
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: all 0.4s ease;
+            }
+            
+            .nav-links.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
             }
             
             .mobile-menu-btn {
@@ -768,6 +1057,12 @@
             .newsletter-form button {
                 border-radius: 4px;
             }
+            
+            .language-toggle {
+                top: auto;
+                bottom: 100px;
+                right: 20px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -786,10 +1081,25 @@
             .contact-form {
                 padding: 25px;
             }
+            
+            .language-toggle {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button class="lang-btn active" id="malay-btn">BM</button>
+        <button class="lang-btn" id="english-btn">EN</button>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container">
@@ -799,6 +1109,7 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#ai">AI Solutions</a></li>
                     <li><a href="#coverage">Coverage</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <button class="mobile-menu-btn">
@@ -812,11 +1123,11 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>IT Excellence & Digital Growth for Jempol & Bahau</h1>
-                <p>Professional IT support and cutting-edge digital marketing solutions to transform your business with the power of AI-driven strategies</p>
+                <h1 data-en="IT Excellence & Digital Growth for Jempol & Bahau" data-ms="Kecemerlangan IT & Pertumbuhan Digital untuk Jempol & Bahau">IT Excellence & Digital Growth for Jempol & Bahau</h1>
+                <p data-en="Professional IT support and cutting-edge digital marketing solutions to transform your business with the power of AI-driven strategies" data-ms="Sokongan IT profesional dan penyelesaian pemasaran digital canggih untuk mengubah perniagaan anda dengan kuasa strategi berasaskan AI">Professional IT support and cutting-edge digital marketing solutions to transform your business with the power of AI-driven strategies</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn"><i class="fas fa-paper-plane"></i> Get Started</a>
-                    <a href="#services" class="btn btn-secondary"><i class="fas fa-list-alt"></i> Our Services</a>
+                    <a href="#contact" class="btn"><i class="fas fa-paper-plane"></i> <span data-en="Get Started" data-ms="Bermula Sekarang">Get Started</span></a>
+                    <a href="#services" class="btn btn-secondary"><i class="fas fa-list-alt"></i> <span data-en="Our Services" data-ms="Perkhidmatan Kami">Our Services</span></a>
                 </div>
             </div>
         </div>
@@ -826,80 +1137,80 @@
     <section class="services" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Our Premium Services</h2>
-                <p>Comprehensive IT and digital marketing solutions tailored to your business needs</p>
+                <h2 data-en="Our Premium Services" data-ms="Perkhidmatan Premium Kami">Our Premium Services</h2>
+                <p data-en="Comprehensive IT and digital marketing solutions tailored to your business needs" data-ms="Penyelesaian IT dan pemasaran digital komprehensif yang disesuaikan dengan keperluan perniagaan anda">Comprehensive IT and digital marketing solutions tailored to your business needs</p>
             </div>
             
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-laptop-medical"></i></div>
-                    <h3>IT Support & Maintenance</h3>
-                    <p>Professional IT troubleshooting, system maintenance, network setup, and hardware support to keep your business running smoothly.</p>
+                    <h3 data-en="IT Support & Maintenance" data-ms="Sokongan & Penyelenggaraan IT">IT Support & Maintenance</h3>
+                    <p data-en="Professional IT troubleshooting, system maintenance, network setup, and hardware support to keep your business running smoothly." data-ms="Penyelesaian masalah IT profesional, penyelenggaraan sistem, persediaan rangkaian, dan sokongan perkakasan untuk memastikan perniagaan anda berjalan lancar.">Professional IT troubleshooting, system maintenance, network setup, and hardware support to keep your business running smoothly.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> 24/7 Technical Support</li>
-                        <li><i class="fas fa-check-circle"></i> Network Infrastructure</li>
-                        <li><i class="fas fa-check-circle"></i> Hardware Maintenance</li>
-                        <li><i class="fas fa-check-circle"></i> System Optimization</li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="24/7 Technical Support" data-ms="Sokongan Teknikal 24/7">24/7 Technical Support</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Network Infrastructure" data-ms="Infrastruktur Rangkaian">Network Infrastructure</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Hardware Maintenance" data-ms="Penyelenggaraan Perkakasan">Hardware Maintenance</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="System Optimization" data-ms="Pengoptimuman Sistem">System Optimization</span></li>
                     </ul>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-code"></i></div>
-                    <h3>Website Development</h3>
-                    <p>Custom website design and development that reflects your brand and engages your customers effectively.</p>
+                    <h3 data-en="Website Development" data-ms="Pembangunan Laman Web">Website Development</h3>
+                    <p data-en="Custom website design and development that reflects your brand and engages your customers effectively." data-ms="Reka bentuk dan pembangunan laman web tersuai yang mencerminkan jenama anda dan melibatkan pelanggan dengan berkesan.">Custom website design and development that reflects your brand and engages your customers effectively.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Responsive Design</li>
-                        <li><i class="fas fa-check-circle"></i> E-commerce Solutions</li>
-                        <li><i class="fas fa-check-circle"></i> CMS Integration</li>
-                        <li><i class="fas fa-check-circle"></i> Performance Optimization</li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Responsive Design" data-ms="Reka Bentuk Responsif">Responsive Design</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="E-commerce Solutions" data-ms="Penyelesaian E-dagang">E-commerce Solutions</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="CMS Integration" data-ms="Integrasi CMS">CMS Integration</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Performance Optimization" data-ms="Pengoptimuman Prestasi">Performance Optimization</span></li>
                     </ul>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-hashtag"></i></div>
-                    <h3>Social Media Management</h3>
-                    <p>Strategic social media planning, content creation, and engagement to grow your online presence.</p>
+                    <h3 data-en="Social Media Management" data-ms="Pengurusan Media Sosial">Social Media Management</h3>
+                    <p data-en="Strategic social media planning, content creation, and engagement to grow your online presence." data-ms="Perancangan media sosial strategik, penciptaan kandungan, dan penglibatan untuk mengembangkan kehadiran dalam talian anda.">Strategic social media planning, content creation, and engagement to grow your online presence.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Content Strategy</li>
-                        <li><i class="fas fa-check-circle"></i> Community Management</li>
-                        <li><i class="fas fa-check-circle"></i> Campaign Management</li>
-                        <li><i class="fas fa-check-circle"></i> Analytics & Reporting</li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Content Strategy" data-ms="Strategi Kandungan">Content Strategy</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Community Management" data-ms="Pengurusan Komuniti">Community Management</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Campaign Management" data-ms="Pengurusan Kempen">Campaign Management</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Analytics & Reporting" data-ms="Analitik & Pelaporan">Analytics & Reporting</span></li>
                     </ul>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-search"></i></div>
-                    <h3>SEO Optimization</h3>
-                    <p>Improve your website's visibility in search engines to attract more potential customers to your business.</p>
+                    <h3 data-en="SEO Optimization" data-ms="Pengoptimuman SEO">SEO Optimization</h3>
+                    <p data-en="Improve your website's visibility in search engines to attract more potential customers to your business." data-ms="Tingkatkan keterlihatan laman web anda dalam enjin carian untuk menarik lebih banyak pelanggan berpotensi kepada perniagaan anda.">Improve your website's visibility in search engines to attract more potential customers to your business.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Keyword Research</li>
-                        <li><i class="fas fa-check-circle"></i> On-Page Optimization</li>
-                        <li><i class="fas fa-check-circle"></i> Technical SEO</li>
-                        <li><i class="fas fa-check-circle"></i> Local SEO</li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Keyword Research" data-ms="Penyelidikan Kata Kunci">Keyword Research</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="On-Page Optimization" data-ms="Pengoptimuman On-Page">On-Page Optimization</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Technical SEO" data-ms="SEO Teknikal">Technical SEO</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Local SEO" data-ms="SEO Tempatan">Local SEO</span></li>
                     </ul>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Digital Marketing Strategy</h3>
-                    <p>Comprehensive digital marketing plans tailored to your business goals and target audience.</p>
+                    <h3 data-en="Digital Marketing Strategy" data-ms="Strategi Pemasaran Digital">Digital Marketing Strategy</h3>
+                    <p data-en="Comprehensive digital marketing plans tailored to your business goals and target audience." data-ms="Pelan pemasaran digital komprehensif yang disesuaikan dengan matlamat perniagaan dan khalayak sasaran anda.">Comprehensive digital marketing plans tailored to your business goals and target audience.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Market Analysis</li>
-                        <li><i class="fas fa-check-circle"></i> Campaign Planning</li>
-                        <li><i class="fas fa-check-circle"></i> ROI Tracking</li>
-                        <li><i class="fas fa-check-circle"></i> Performance Analytics</li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Market Analysis" data-ms="Analisis Pasaran">Market Analysis</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Campaign Planning" data-ms="Perancangan Kempen">Campaign Planning</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="ROI Tracking" data-ms="Penjejakan ROI">ROI Tracking</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Performance Analytics" data-ms="Analitik Prestasi">Performance Analytics</span></li>
                     </ul>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-cloud"></i></div>
-                    <h3>Cloud Solutions</h3>
-                    <p>Secure and scalable cloud services for data storage, backup, and collaborative work environments.</p>
+                    <h3 data-en="Cloud Solutions" data-ms="Penyelesaian Awan">Cloud Solutions</h3>
+                    <p data-en="Secure and scalable cloud services for data storage, backup, and collaborative work environments." data-ms="Perkhidmatan awan yang selamat dan boleh skala untuk penyimpanan data, sandaran, dan persekitaran kerja kolaboratif.">Secure and scalable cloud services for data storage, backup, and collaborative work environments.</p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Cloud Migration</li>
-                        <li><i class="fas fa-check-circle"></i> Data Backup Solutions</li>
-                        <li><i class="fas fa-check-circle"></i> Collaboration Tools</li>
-                        <li><i class="fas fa-check-circle"></i> Security Management</li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Cloud Migration" data-ms="Migrasi Awan">Cloud Migration</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Data Backup Solutions" data-ms="Penyelesaian Sandaran Data">Data Backup Solutions</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Collaboration Tools" data-ms="Alat Kolaborasi">Collaboration Tools</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Security Management" data-ms="Pengurusan Keselamatan">Security Management</span></li>
                     </ul>
                 </div>
             </div>
@@ -911,18 +1222,18 @@
         <div class="container">
             <div class="ai-container">
                 <div class="ai-content">
-                    <h2>AI-Powered Solutions</h2>
-                    <p>Leverage cutting-edge artificial intelligence to enhance your IT infrastructure and digital marketing strategies. Our AI solutions help optimize operations, predict trends, and deliver personalized customer experiences.</p>
+                    <h2 data-en="AI-Powered Solutions" data-ms="Penyelesaian Berkuasa AI">AI-Powered Solutions</h2>
+                    <p data-en="Leverage cutting-edge artificial intelligence to enhance your IT infrastructure and digital marketing strategies. Our AI solutions help optimize operations, predict trends, and deliver personalized customer experiences." data-ms="Manfaatkan kecerdasan buatan canggih untuk meningkatkan infrastruktur IT dan strategi pemasaran digital anda. Penyelesaian AI kami membantu mengoptimumkan operasi, meramalkan trend, dan memberikan pengalaman pelanggan yang diperibadikan.">Leverage cutting-edge artificial intelligence to enhance your IT infrastructure and digital marketing strategies. Our AI solutions help optimize operations, predict trends, and deliver personalized customer experiences.</p>
                     <ul class="ai-features">
-                        <li><i class="fas fa-brain"></i> Predictive analytics for IT infrastructure management</li>
-                        <li><i class="fas fa-robot"></i> AI-driven customer support chatbots</li>
-                        <li><i class="fas fa-chart-pie"></i> Marketing intelligence and consumer behavior analysis</li>
-                        <li><i class="fas fa-shield-alt"></i> Enhanced cybersecurity with AI threat detection</li>
-                        <li><i class="fas fa-bullseye"></i> Personalized content recommendations for marketing</li>
+                        <li><i class="fas fa-brain"></i> <span data-en="Predictive analytics for IT infrastructure management" data-ms="Analitik ramalan untuk pengurusan infrastruktur IT">Predictive analytics for IT infrastructure management</span></li>
+                        <li><i class="fas fa-robot"></i> <span data-en="AI-driven customer support chatbots" data-ms="Chatbot sokongan pelanggan berasaskan AI">AI-driven customer support chatbots</span></li>
+                        <li><i class="fas fa-chart-pie"></i> <span data-en="Marketing intelligence and consumer behavior analysis" data-ms="Perisikan pemasaran dan analisis tingkah laku pengguna">Marketing intelligence and consumer behavior analysis</span></li>
+                        <li><i class="fas fa-shield-alt"></i> <span data-en="Enhanced cybersecurity with AI threat detection" data-ms="Keselamatan siber yang dipertingkatkan dengan pengesanan ancaman AI">Enhanced cybersecurity with AI threat detection</span></li>
+                        <li><i class="fas fa-bullseye"></i> <span data-en="Personalized content recommendations for marketing" data-ms="Cadangan kandungan diperibadikan untuk pemasaran">Personalized content recommendations for marketing</span></li>
                     </ul>
                 </div>
                 <div class="ai-image">
-                    <img src="https://placeholder-image-service.onrender.com/image/500x400?prompt=Futuristic%20AI%20technology%20interface%20with%20holographic%20displays%20and%20data%20visualizations&id=ai-tech-001" alt="Advanced AI technology interface with data visualizations and holographic elements">
+                    <img src="https://images.unsplash.com/photo-1677442135135-416f8aa26a5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Advanced AI technology interface with data visualizations and holographic elements">
                 </div>
             </div>
         </div>
@@ -932,27 +1243,123 @@
     <section class="coverage" id="coverage">
         <div class="container">
             <div class="section-title">
-                <h2>Our Coverage Area</h2>
-                <p>Proudly serving businesses in these Negeri Sembilan regions</p>
+                <h2 data-en="Our Coverage Area" data-ms="Kawasan Liputan Kami">Our Coverage Area</h2>
+                <p data-en="Proudly serving businesses in these Negeri Sembilan regions" data-ms="Dengan bangga menyediakan perkhidmatan untuk perniagaan di kawasan Negeri Sembilan ini">Proudly serving businesses in these Negeri Sembilan regions</p>
             </div>
             
             <div class="area-cards">
                 <div class="area-card">
                     <div class="area-icon"><i class="fas fa-city"></i></div>
                     <h3>Jempol</h3>
-                    <p>Complete IT and digital marketing services for businesses in the Jempol district.</p>
+                    <p data-en="Complete IT and digital marketing services for businesses in the Jempol district." data-ms="Perkhidmatan IT dan pemasaran digital lengkap untuk perniagaan di daerah Jempol.">Complete IT and digital marketing services for businesses in the Jempol district.</p>
                 </div>
                 
                 <div class="area-card">
                     <div class="area-icon"><i class="fas fa-building"></i></div>
                     <h3>Bahau</h3>
-                    <p>Professional technology solutions for enterprises and SMEs in the Bahau area.</p>
+                    <p data-en="Professional technology solutions for enterprises and SMEs in the Bahau area." data-ms="Penyelesaian teknologi profesional untuk perusahaan dan PKS di kawasan Bahau.">Professional technology solutions for enterprises and SMEs in the Bahau area.</p>
                 </div>
                 
                 <div class="area-card">
                     <div class="area-icon"><i class="fas fa-map-marked-alt"></i></div>
-                    <h3>Surrounding Areas</h3>
-                    <p>Extended services available for businesses in neighboring regions of Negeri Sembilan.</p>
+                    <h3 data-en="Surrounding Areas" data-ms="Kawasan Sekitar">Surrounding Areas</h3>
+                    <p data-en="Extended services available for businesses in neighboring regions of Negeri Sembilan." data-ms="Perkhidmatan lanjutan tersedia untuk perniagaan di kawasan jiran Negeri Sembilan.">Extended services available for businesses in neighboring regions of Negeri Sembilan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="What Our Clients Say" data-ms="Apa Kata Pelanggan Kami">What Our Clients Say</h2>
+                <p data-en="Hear from businesses in Jempol and Bahau that have transformed with our services" data-ms="Dengar daripada perniagaan di Jempol dan Bahau yang telah berubah dengan perkhidmatan kami">Hear from businesses in Jempol and Bahau that have transformed with our services</p>
+            </div>
+            
+            <div class="testimonial-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="testimonial-avatar">
+                        <div>
+                            <div class="testimonial-name">Ahmad Rizal</div>
+                            <div class="testimonial-role" data-en="Restaurant Owner, Bahau" data-ms="Pemilik Restoran, Bahau">Restaurant Owner, Bahau</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-content" data-en="ITGuyN9 transformed our online presence. Our website traffic increased by 200% and we're getting more orders than ever before!" data-ms="ITGuyN9 mengubah kehadiran dalam talian kami. Trafik laman web kami meningkat 200% dan kami mendapat lebih banyak pesanan daripada sebelumnya!">ITGuyN9 transformed our online presence. Our website traffic increased by 200% and we're getting more orders than ever before!</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="testimonial-avatar">
+                        <div>
+                            <div class="testimonial-name">Sarah Lim</div>
+                            <div class="testimonial-role" data-en="Boutique Owner, Jempol" data-ms="Pemilik Butik, Jempol">Boutique Owner, Jempol</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-content" data-en="Their IT support team is always responsive. They fixed our network issues immediately and now our store operations are seamless." data-ms="Pasukan sokongan IT mereka sentiasa responsif. Mereka menyelesaikan masalah rangkaian kami dengan segera dan sekarang operasi kedai kami lancar.">Their IT support team is always responsive. They fixed our network issues immediately and now our store operations are seamless.</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Client" class="testimonial-avatar">
+                        <div>
+                            <div class="testimonial-name">Rajesh Kumar</div>
+                            <div class="testimonial-role" data-en="Manufacturing Business, Bahau" data-ms="Perniagaan Pembuatan, Bahau">Manufacturing Business, Bahau</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-content" data-en="The AI solutions implemented by ITGuyN9 have optimized our inventory management and reduced costs by 18%. Highly recommended!" data-ms="Penyelesaian AI yang dilaksanakan oleh ITGuyN9 telah mengoptimumkan pengurusan inventori kami dan mengurangkan kos sebanyak 18%. Sangat disyorkan!">The AI solutions implemented by ITGuyN9 have optimized our inventory management and reduced costs by 18%. Highly recommended!</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Business Section -->
+    <section class="local-business">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Supporting Local Jempol Businesses" data-ms="Menyokong Perniagaan Tempatan Jempol">Supporting Local Jempol Businesses</h2>
+                <p data-en="We're committed to helping local businesses in Jempol and Bahau thrive in the digital age" data-ms="Kami komited untuk membantu perniagaan tempatan di Jempol dan Bahau berkembang maju dalam era digital">We're committed to helping local businesses in Jempol and Bahau thrive in the digital age</p>
+            </div>
+            
+            <div class="local-grid">
+                <div class="local-card">
+                    <div class="local-icon"><i class="fas fa-handshake"></i></div>
+                    <h3 data-en="Local Expertise" data-ms="Kepakaran Tempatan">Local Expertise</h3>
+                    <p data-en="We understand the unique challenges and opportunities for businesses in Jempol and Bahau." data-ms="Kami memahami cabaran dan peluang unik untuk perniagaan di Jempol dan Bahau.">We understand the unique challenges and opportunities for businesses in Jempol and Bahau.</p>
+                </div>
+                
+                <div class="local-card">
+                    <div class="local-icon"><i class="fas fa-users"></i></div>
+                    <h3 data-en="Community Focus" data-ms="Fokus Komuniti">Community Focus</h3>
+                    <p data-en="We're part of the local community and invested in the success of businesses in our area." data-ms="Kami adalah sebahagian daripada komuniti tempatan dan melabur dalam kejayaan perniagaan di kawasan kami.">We're part of the local community and invested in the success of businesses in our area.</p>
+                </div>
+                
+                <div class="local-card">
+                    <div class="local-icon"><i class="fas fa-rocket"></i></div>
+                    <h3 data-en="Growth Partnership" data-ms="Perkongsian Pertumbuhan">Growth Partnership</h3>
+                    <p data-en="We don't just provide services - we partner with you to achieve sustainable business growth." data-ms="Kami bukan sekadar menyediakan perkhidmatan - kami bekerjasama dengan anda untuk mencapai pertumbuhan perniagaan yang mampan.">We don't just provide services - we partner with you to achieve sustainable business growth.</p>
                 </div>
             </div>
         </div>
@@ -962,20 +1369,20 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Reach out to discuss how we can help your business grow</p>
+                <h2 data-en="Contact Us" data-ms="Hubungi Kami">Contact Us</h2>
+                <p data-en="Reach out to discuss how we can help your business grow" data-ms="Hubungi kami untuk berbincang bagaimana kami boleh membantu perniagaan anda berkembang">Reach out to discuss how we can help your business grow</p>
             </div>
             
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Get In Touch</h3>
+                    <h3 data-en="Get In Touch" data-ms="Hubungi Kami">Get In Touch</h3>
                     
                     <div class="contact-detail">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-text">
-                            <h4>Email Us</h4>
+                            <h4 data-en="Email Us" data-ms="E-mel Kami">Email Us</h4>
                             <p>info@itguyn9.com</p>
                         </div>
                     </div>
@@ -985,7 +1392,7 @@
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div class="contact-text">
-                            <h4>Call Us</h4>
+                            <h4 data-en="Call Us" data-ms="Telefon Kami">Call Us</h4>
                             <p>+60 12 345 6789</p>
                         </div>
                     </div>
@@ -995,8 +1402,8 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-text">
-                            <h4>Location</h4>
-                            <p>Servicing Jempol & Bahau, Negeri Sembilan</p>
+                            <h4 data-en="Location" data-ms="Lokasi">Location</h4>
+                            <p data-en="Servicing Jempol & Bahau, Negeri Sembilan" data-ms="Memberi perkhidmatan di Jempol & Bahau, Negeri Sembilan">Servicing Jempol & Bahau, Negeri Sembilan</p>
                         </div>
                     </div>
                     
@@ -1005,50 +1412,50 @@
                             <i class="fas fa-clock"></i>
                         </div>
                         <div class="contact-text">
-                            <h4>Business Hours</h4>
-                            <p>Monday - Friday: 9AM - 6PM</p>
-                            <p>Saturday: 10AM - 4PM</p>
+                            <h4 data-en="Business Hours" data-ms="Waktu Perniagaan">Business Hours</h4>
+                            <p data-en="Monday - Friday: 9AM - 6PM" data-ms="Isnin - Jumaat: 9PG - 6PTG">Monday - Friday: 9AM - 6PM</p>
+                            <p data-en="Saturday: 10AM - 4PM" data-ms="Sabtu: 10PG - 4PTG">Saturday: 10AM - 4PM</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <form>
+                    <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" placeholder="Your Name" required>
+                            <label for="name" data-en="Full Name" data-ms="Nama Penuh">Full Name</label>
+                            <input type="text" id="name" placeholder data-en="Your Name" data-ms="Nama Anda" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="Your Email" required>
+                            <label for="email" data-en="Email Address" data-ms="Alamat E-mel">Email Address</label>
+                            <input type="email" id="email" placeholder data-en="Your Email" data-ms="E-mel Anda" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" placeholder="Your Phone Number">
+                            <label for="phone" data-en="Phone Number" data-ms="Nombor Telefon">Phone Number</label>
+                            <input type="tel" id="phone" placeholder data-en="Your Phone Number" data-ms="Nombor Telefon Anda">
                         </div>
                         
                         <div class="form-group">
-                            <label for="service">Service Needed</label>
+                            <label for="service" data-en="Service Needed" data-ms="Perkhidmatan Diperlukan">Service Needed</label>
                             <select id="service">
-                                <option value="">Select a Service</option>
-                                <option value="it-support">IT Support</option>
-                                <option value="web-development">Website Development</option>
-                                <option value="digital-marketing">Digital Marketing</option>
-                                <option value="seo">SEO Optimization</option>
-                                <option value="social-media">Social Media Management</option>
-                                <option value="cloud">Cloud Solutions</option>
-                                <option value="ai">AI Solutions</option>
+                                <option value="" data-en="Select a Service" data-ms="Pilih Perkhidmatan">Select a Service</option>
+                                <option value="it-support" data-en="IT Support" data-ms="Sokongan IT">IT Support</option>
+                                <option value="web-development" data-en="Website Development" data-ms="Pembangunan Laman Web">Website Development</option>
+                                <option value="digital-marketing" data-en="Digital Marketing" data-ms="Pemasaran Digital">Digital Marketing</option>
+                                <option value="seo" data-en="SEO Optimization" data-ms="Pengoptimuman SEO">SEO Optimization</option>
+                                <option value="social-media" data-en="Social Media Management" data-ms="Pengurusan Media Sosial">Social Media Management</option>
+                                <option value="cloud" data-en="Cloud Solutions" data-ms="Penyelesaian Awan">Cloud Solutions</option>
+                                <option value="ai" data-en="AI Solutions" data-ms="Penyelesaian AI">AI Solutions</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" placeholder="How can we help you?" required></textarea>
+                            <label for="message" data-en="Your Message" data-ms="Mesej Anda">Your Message</label>
+                            <textarea id="message" placeholder data-en="How can we help you?" data-ms="Bagaimana kami boleh membantu anda?" required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn form-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                        <button type="submit" class="btn form-btn"><i class="fas fa-paper-plane"></i> <span data-en="Send Message" data-ms="Hantar Mesej">Send Message</span></button>
                     </form>
                 </div>
             </div>
@@ -1061,75 +1468,194 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="footer-logo"><i class="fas fa-laptop-code"></i>ITGuyN9</div>
-                    <p>Professional IT support and digital marketing solutions for businesses in Jempol and Bahau, Negeri Sembilan. We combine technical expertise with innovative strategies to drive your business growth.</p>
+                    <p data-en="Professional IT support and digital marketing solutions for businesses in Jempol and Bahau, Negeri Sembilan. We combine technical expertise with innovative strategies to drive your business growth." data-ms="Sokongan IT profesional dan penyelesaian pemasaran digital untuk perniagaan di Jempol dan Bahau, Negeri Sembilan. Kami menggabungkan kepakaran teknikal dengan strategi inovatif untuk memacu pertumbuhan perniagaan anda.">Professional IT support and digital marketing solutions for businesses in Jempol and Bahau, Negeri Sembilan. We combine technical expertise with innovative strategies to drive your business growth.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-links">
-                    <h4>Quick Links</h4>
+                    <h4 data-en="Quick Links" data-ms="Pautan Pantas">Quick Links</h4>
                     <ul>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#ai">AI Solutions</a></li>
-                        <li><a href="#coverage">Coverage Area</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#services" data-en="Services" data-ms="Perkhidmatan">Services</a></li>
+                        <li><a href="#ai" data-en="AI Solutions" data-ms="Penyelesaian AI">AI Solutions</a></li>
+                        <li><a href="#coverage" data-en="Coverage Area" data-ms="Kawasan Liputan">Coverage Area</a></li>
+                        <li><a href="#testimonials" data-en="Testimonials" data-ms="Testimoni">Testimonials</a></li>
+                        <li><a href="#contact" data-en="Contact Us" data-ms="Hubungi Kami">Contact Us</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links">
-                    <h4>Services</h4>
+                    <h4 data-en="Services" data-ms="Perkhidmatan">Services</h4>
                     <ul>
-                        <li><a href="#">IT Support</a></li>
-                        <li><a href="#">Website Development</a></li>
-                        <li><a href="#">Digital Marketing</a></li>
-                        <li><a href="#">SEO Optimization</a></li>
-                        <li><a href="#">Cloud Solutions</a></li>
+                        <li><a href="#" data-en="IT Support" data-ms="Sokongan IT">IT Support</a></li>
+                        <li><a href="#" data-en="Website Development" data-ms="Pembangunan Laman Web">Website Development</a></li>
+                        <li><a href="#" data-en="Digital Marketing" data-ms="Pemasaran Digital">Digital Marketing</a></li>
+                        <li><a href="#" data-en="SEO Optimization" data-ms="Pengoptimuman SEO">SEO Optimization</a></li>
+                        <li><a href="#" data-en="Cloud Solutions" data-ms="Penyelesaian Awan">Cloud Solutions</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-newsletter">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to our newsletter for the latest in tech and digital marketing insights.</p>
+                    <h4 data-en="Newsletter" data-ms="Surat Berita">Newsletter</h4>
+                    <p data-en="Subscribe to our newsletter for the latest in tech and digital marketing insights." data-ms="Langgan surat berita kami untuk insight terkini dalam teknologi dan pemasaran digital.">Subscribe to our newsletter for the latest in tech and digital marketing insights.</p>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email Address">
-                        <button type="submit">Subscribe</button>
+                        <input type="email" placeholder data-en="Your Email Address" data-ms="Alamat E-mel Anda">
+                        <button type="submit" data-en="Subscribe" data-ms="Langgan">Subscribe</button>
                     </form>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 ITGuyN9. All rights reserved.</p>
+                <p>&copy; 2023 ITGuyN9. <span data-en="All rights reserved." data-ms="Hak cipta terpelihara.">All rights reserved.</span></p>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
     <script>
-        // Simple animation for elements when they come into view
-        document.addEventListener('DOMContentLoaded', function() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animation = 'fadeInUp 1s ease forwards';
-                    }
-                });
-            }, { threshold: 0.1 });
+        // Wait for page to fully load
+        window.addEventListener('load', function() {
+            // Hide loader
+            document.querySelector('.loader').classList.add('hidden');
             
-            // Observe service cards, area cards, and other elements
-            document.querySelectorAll('.service-card, .area-card, .ai-content, .contact-info, .contact-form').forEach(el => {
-                observer.observe(el);
+            // Initialize language to Malay
+            let currentLang = 'ms';
+            
+            // Language toggle functionality
+            const malayBtn = document.getElementById('malay-btn');
+            const englishBtn = document.getElementById('english-btn');
+            
+            malayBtn.addEventListener('click', function() {
+                if (currentLang !== 'ms') {
+                    changeLanguage('ms');
+                    malayBtn.classList.add('active');
+                    englishBtn.classList.remove('active');
+                    currentLang = 'ms';
+                }
             });
             
-            // Mobile menu toggle
+            englishBtn.addEventListener('click', function() {
+                if (currentLang !== 'en') {
+                    changeLanguage('en');
+                    englishBtn.classList.add('active');
+                    malayBtn.classList.remove('active');
+                    currentLang = 'en';
+                }
+            });
+            
+            // Function to change language
+            function changeLanguage(lang) {
+                document.querySelectorAll('[data-en], [data-ms]').forEach(element => {
+                    if (element.hasAttribute(`data-${lang}`)) {
+                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                            element.placeholder = element.getAttribute(`data-${lang}`);
+                        } else if (element.tagName === 'OPTION') {
+                            element.textContent = element.getAttribute(`data-${lang}`);
+                        } else {
+                            element.textContent = element.getAttribute(`data-${lang}`);
+                        }
+                    }
+                });
+                
+                // Update HTML lang attribute
+                document.documentElement.lang = lang === 'ms' ? 'ms' : 'en';
+            }
+            
+            // Mobile menu functionality
             const menuBtn = document.querySelector('.mobile-menu-btn');
             const navLinks = document.querySelector('.nav-links');
             
             menuBtn.addEventListener('click', () => {
-                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                navLinks.classList.toggle('active');
+                menuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
             });
+            
+            // Close mobile menu when clicking on links
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+            
+            // Header scroll effect
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Back to top button
+            const backToTopBtn = document.querySelector('.back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Animation for elements when they come into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 1s ease forwards';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Observe elements for animation
+            document.querySelectorAll('.service-card, .area-card, .ai-content, .ai-image, .contact-info, .contact-form, .testimonial-card, .local-card').forEach(el => {
+                el.style.opacity = '0';
+                observer.observe(el);
+            });
+            
+            // Form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simple form validation
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const message = document.getElementById('message').value;
+                    
+                    if (name && email && message) {
+                        // Here you would typically send the form data to a server
+                        alert(currentLang === 'ms' ? 
+                            'Terima kasih! Mesej anda telah dihantar. Kami akan menghubungi anda tidak lama lagi.' : 
+                            'Thank you! Your message has been sent. We will contact you soon.');
+                        contactForm.reset();
+                    } else {
+                        alert(currentLang === 'ms' ? 
+                            'Sila isi semua medan yang diperlukan.' : 
+                            'Please fill in all required fields.');
+                    }
+                });
+            }
         });
     </script>
 </body>
